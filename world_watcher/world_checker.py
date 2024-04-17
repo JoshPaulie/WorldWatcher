@@ -1,7 +1,7 @@
 import random
 import statistics
 
-from ping import ping
+from .ping import ping
 
 # OSRS server IPs for the first 100 servers (Worlds 300 - 400)
 worlds_servers = [f"oldschool{n}.runescape.com" for n in range(1, 101)]
