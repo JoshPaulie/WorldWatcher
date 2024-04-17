@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "world_watcher"
+dynamic = ["version"]
+requires-python = ">= 3.12"
+classifiers = ["Programming Language :: Python :: 3.12"]
+
+dependencies = ["flask"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+world_watcher = "world_watcher.main:main"
+
+[tool.hatch.version]
+path = "world_watcher/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["world_watcher"]
