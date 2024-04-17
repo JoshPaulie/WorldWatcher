@@ -16,4 +16,4 @@ Mod Ash [confirmed my suspicion](https://twitter.com/jagexash/status/17781477486
 ## How it works
 A random selection of worlds are pinged to determined availability. If 80% or more respond, the game is considered "online"
 
-Right now, **WorldChecker** only determines if the game is online **as a whole**. Later iterations may report world availability per world/region
+Right now, **WorldWatcher** only determines if the game is online **as a whole**. Later iterations may report world availability per world/region
