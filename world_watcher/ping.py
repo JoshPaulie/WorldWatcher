@@ -7,7 +7,7 @@ class NonPosixEnvironment(Exception):
     pass
 
 
-def ping(address: str) -> float | None:
+async def ping(address: str) -> float | None:
     """(Very) crude wrapping around unix ping binary. Returns server response time in milliseconds
 
     Assumptions:
