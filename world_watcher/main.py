@@ -26,3 +26,11 @@ async def watcher():
 
     result = {"online": cache["status"]}
     return json.dumps(result)
+
+
+def main():
+    app.run(debug=True)
+
+
+if __name__ == "__main__":
+    main()
