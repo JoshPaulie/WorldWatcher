@@ -13,22 +13,14 @@ async def poll_servers(*, threshhold: float, pool_size: int) -> bool:
     # Random selection of servers to query
     server_pool = random.choices(worlds_servers, k=pool_size)
 
-    # Queue so we can issue many pings asynchronously
-    queue = asyncio.Queue()
-    tasks = []
-    for address in server_pool:
-        task = asyncio.create_task(ping(address))
-        tasks.append(task)
-        await queue.put(task)
+    # Create tasks for each server ping
+    tasks = [asyncio.create_task(ping(address)) for address in server_pool]
 
     # Wait for all tasks to complete
     await asyncio.gather(*tasks)
 
-    # Collect results from the queue
-    pool_response_times = []
-    while not queue.empty():
-        task = await queue.get()
-        pool_response_times.append(task.result())
+    # Collect results from tasks
+    pool_response_times = [task.result() for task in tasks]
 
     # Determine % of servers that responded
     pool_response_results = statistics.mean([bool(response_time) for response_time in pool_response_times])
