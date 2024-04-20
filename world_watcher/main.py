@@ -1,7 +1,6 @@
 import datetime as dt
-import json
 
-from flask import Flask, render_template
+from flask import Flask, jsonify, render_template
 
 from .cache import cache
 from .world_checker import poll_servers
@@ -29,7 +28,7 @@ async def check_cache():
 async def watcher():
     await check_cache()
     result = {"online": cache["status"]}
-    return json.dumps(result)
+    return jsonify(result)
 
 
 @app.route("/")
