@@ -11,16 +11,29 @@
       rel="stylesheet"
     />
     <style>
-      #status {
+      body {
         font-family: "Jersey 10", sans-serif;
         font-weight: 400;
         font-style: normal;
+        text-align: center;
+        background-color: black;
+        color: white;
+      }
+      #status {
+        font-size: 120px;
+      }
+      #api-link {
+        font-size: 30px;
+      }
+      a,
+      a:visited {
+        color: cornflowerblue;
       }
     </style>
   </head>
   <body>
-    <div style="font-size: 120px" id="status">{{ status }}</div>
-    <p style="font-size: 30">
+    <div id="status">{{ status }}</div>
+    <p id="api-link">
       Check out the endpoint
       <a rel="stylesheet" href="{{ url_for('watcher') }}">here</a>
     </p>
