@@ -4,8 +4,10 @@ Service that monitors and reports OSRS world outages
 > [!Note]
 > Terms "world" and "server" are used [interchangably](https://oldschool.runescape.wiki/w/Server)
 
-> [!Caution]
+> [!Important]
 > This all rides on the assumption that servers don't respond to pings when worlds are offline. If the host is responsible for multiple services, and not just hosting OS worlds, this whole endeavour may be a waste of time. We won't be able to know until I can run tests while the worlds are actually offline. 😄 
+>
+> **Update**: Servers continued to ping while game was offline. Back to the drawing board!
 
 ## Goal
 Create an accurate and reliable API that provides OSRS server status, without overwhelming Jagex with requests.
